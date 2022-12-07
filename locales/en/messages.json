@@ -3156,6 +3156,36 @@
         "message": "Clear ALL",
         "description": "In the LED STRIP, clear all leds"
     },
+    "ledStripProfileTitle": {
+        "message": "Profile"
+    },
+    "ledStripProfileRaceOption": {
+        "message": "Race"
+    },
+    "ledStripProfileBeaconOption": {
+        "message": "Beacon"
+    },
+    "ledStripProfileStatusOption": {
+        "message": "Status"
+    },
+    "ledStripProfileStatusDimmedOption": {
+        "message": "Status dimmed"
+    },
+    "ledStripGlobalBlinkRate": {
+        "message": "Blink rate"
+    },
+    "ledStripGlobalFlickerRate": {
+        "message": "Flicker rate"
+    },
+    "ledStripGlobalDimmerRate": {
+        "message": "Dimmer rate"
+    },
+    "ledStripFlickerOverlay": {
+        "message": "Flicker"
+    },
+    "ledStripDimmerOverlay": {
+        "message": "Dimmed (in profile Status dimmed)"
+    },
     "ledStripVtxOverlay": {
         "message": "VTX (uses vtx frequency to assign color)"
     },
@@ -3318,6 +3348,9 @@
     },
     "ledStripBlinkLandingOverlay": {
         "message": "Blink on landing"
+    },
+    "ledStripBlinkPause": {
+        "message": "Pause"
     },
     "ledStripOverlayTitle": {
         "message": "Overlay"

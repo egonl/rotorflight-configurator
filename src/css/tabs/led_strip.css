@@ -8,6 +8,14 @@
     margin-bottom: 10px;
 }
 
+.tab-led-strip .blinkbits-nibble {
+    margin-top: 5px;
+    margin-right: 3px;
+}
+
+.tab-led-strip .blinkbits input[type='checkbox'] {
+    margin-right: -3px;
+}
 
 .tab-led-strip .section {
     color: #565656;
@@ -232,7 +240,7 @@
 .tab-led-strip .overlays,
 .tab-led-strip .blinkers,
 .tab-led-strip .modifiers {
-    display: inline-block;
+    display: block;
 }
 
 .tab-led-strip .colorDefineSliders {
@@ -268,6 +276,7 @@
 .tab-led-strip .special_colors button.btnOn,
 .tab-led-strip .mode_colors button.btnOn {
     border-color: #000;
+    border-width: 3px;
 }
 
 .tab-led-strip .colors button:hover {
@@ -345,7 +354,7 @@
 .tab-led-strip .controls {
     position: relative;
     float: left;
-    width: 285px;
+    width: 450px;
 }
 
 .colorDefineSliderValue,

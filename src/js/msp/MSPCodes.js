@@ -123,6 +123,8 @@ const MSPCodes = {
     MSP_SET_GOVERNOR:               143,
     MSP_RPM_FILTER:                 144,
     MSP_SET_RPM_FILTER:             145,
+    MSP_LED_STRIP_SETTINGS:         146,
+    MSP_SET_LED_STRIP_SETTINGS:     147,
 
     MSP_UID:                        160,
     MSP_GPS_SV_INFO:                164,
