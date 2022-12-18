@@ -267,6 +267,30 @@ TABS.led_strip.initialize = function (callback) {
             $('.special_colors').each(function() { setModeBackgroundColor($(this)); });
 
             updateBulkCmd();
+            mspHelper.sendLedStripConfig();
+        });
+
+        $('.colors').on('contextmenu', 'button', function(e) {
+            if (selectedModeColor) return;
+
+            const that = this;
+            const colorButtons = $(this).parent().find('button');
+            colorButtons.removeClass('btnAltOn');
+
+            for (let colorIndex = 0; colorIndex < 16; colorIndex++) {
+                $('.ui-selected').removeClass('altcolor-' + colorIndex);
+
+                if ($(that).is('.color-' + colorIndex)) {
+                    selectedColorIndex = colorIndex;
+                    $('.ui-selected').addClass('altcolor-' + colorIndex);
+                }
+            }
+            $(this).addClass('btnAltOn');
+
+            updateBulkCmd();
+            mspHelper.sendLedStripConfig();
+
+            return false;
         });
 
         $('.colors').on('dblclick', 'button', function() {
@@ -394,6 +418,13 @@ TABS.led_strip.initialize = function (callback) {
                         } else {
                             $(className).removeClass('btnOn');
                         }
+                        const altColorClass = '.altcolor-' + colorIndex;
+                        if ($(uiSelectedLast).is(altColorClass)) {
+                            $(className).addClass('btnAltOn');
+
+                        } else {
+                            $(className).removeClass('btnAltOn');
+                        }
                     }
 
                     // set checkbox values
@@ -480,7 +511,7 @@ TABS.led_strip.initialize = function (callback) {
 
         function toggleSwitch(that, letter)
         {
-            if ($(that).is(':checked')) {
+            if ($(that).first().is(':checked')) {
                 $('.ui-selected').find('.wire').each(function() {
                     if ($(this).text() != "") {
 
@@ -554,7 +585,9 @@ TABS.led_strip.initialize = function (callback) {
                                 }
                             }
 
-                            $('#blinkbits').toggle(cbb.is(':checked'));
+                            if (letter === 'b') {
+                                $('#blinkbits').toggle(cbb.is(':checked'));
+                            }
                         }
                     });
 
@@ -667,6 +700,8 @@ TABS.led_strip.initialize = function (callback) {
             $(this).addClass(`blinkpattern-${led.blinkPattern}`);
 
             $(this).addClass(`blinkpause-${led.blinkPause}`);
+
+            $(this).addClass(`altcolor-${led.altColor}`);
         });
 
         colorDefineSliders.hide();
@@ -735,6 +770,7 @@ TABS.led_strip.initialize = function (callback) {
                 let colorIndex = 0;
                 let blinkPattern = 0;
                 let blinkPause = 0;
+                let altColorIndex = 0;
                 const that = this;
 
                 let match = $(this).attr("class").match(/(^|\s)color-([0-9]+)(\s|$)/);
@@ -750,6 +786,11 @@ TABS.led_strip.initialize = function (callback) {
                 match = $(this).attr("class").match(/(^|\s)blinkpause-([0-9]+)(\s|$)/);
                 if (match) {
                     blinkPause = match[2];
+                }
+
+                match = $(this).attr("class").match(/(^|\s)altcolor-([0-9]+)(\s|$)/);
+                if (match) {
+                    altColorIndex = match[2];
                 }
 
                 self.baseFuncs.forEach(function(letter){
@@ -777,7 +818,8 @@ TABS.led_strip.initialize = function (callback) {
                         functions: functions,
                         color: colorIndex,
                         blinkPattern: blinkPattern,
-                        blinkPause: blinkPause
+                        blinkPause: blinkPause,
+                        altColor: altColorIndex
                     };
 
                     FC.LED_STRIP[wireNumber] = led;
@@ -1071,8 +1113,10 @@ TABS.led_strip.initialize = function (callback) {
         $('.mode_colors').each(function() { setModeBackgroundColor($(this)); });
         $('.special_colors').each(function() { setModeBackgroundColor($(this)); });
 
-        if (change)
+        if (change) {
             updateBulkCmd();
+            mspHelper.sendLedStripColors();
+        }
     }
 
     function drawColorBoxesInColorLedPoints() {

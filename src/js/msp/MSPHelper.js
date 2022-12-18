@@ -1085,6 +1085,7 @@ MspHelper.prototype.process_data = function(dataHandler) {
 
                     const blinkPattern = (mask2 >> 1) & 0xFFFF;
                     const blinkPause = (mask2 >> 17) & 0xF;
+                    const altColor = (mask2 >> 21) & 0xF;
 
                     const led = {
                         y: (mask) & 0xF,
@@ -1094,7 +1095,8 @@ MspHelper.prototype.process_data = function(dataHandler) {
                         directions: directions,
                         parameters: (mask >> 30) & 0xF,
                         blinkPattern: blinkPattern,
-                        blinkPause: blinkPause
+                        blinkPause: blinkPause,
+                        altColor: altColor
                     };
 
                     FC.LED_STRIP.push(led);
@@ -2406,6 +2408,7 @@ MspHelper.prototype.sendLedConfig = function(ledIndex, onCompleteCallback)
 
     mask = led.blinkPattern << 1;
     mask |= led.blinkPause << 17;
+    mask |= led.altColor << 21;
 
     buffer.push32(mask);
 

@@ -271,17 +271,17 @@
 .tab-led-strip .color-13 {background: deeppink;}
 
 
+.tab-led-strip .colors .btnAltOn {
+    border-color: #F00;
+    border-width: 2px;
+}
+
 .tab-led-strip .directions button.btnOn,
 .tab-led-strip .colors .btnOn,
 .tab-led-strip .special_colors button.btnOn,
 .tab-led-strip .mode_colors button.btnOn {
     border-color: #000;
-    border-width: 3px;
-}
-
-.tab-led-strip .colors button:hover {
-    border-color: inherit;
-    border-style: solid;
+    border-width: 2px;
 }
 
 .tab-led-strip .directions .btnOn {
