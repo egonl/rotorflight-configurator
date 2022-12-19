@@ -3168,8 +3168,8 @@
     "ledStripProfileStatusOption": {
         "message": "Status"
     },
-    "ledStripProfileStatusDimmedOption": {
-        "message": "Status dimmed"
+    "ledStripProfileAltStatusOption": {
+        "message": "Alt Status"
     },
     "ledStripGlobalBlinkRate": {
         "message": "Blink rate"
@@ -3177,14 +3177,14 @@
     "ledStripGlobalFlickerRate": {
         "message": "Flicker rate"
     },
-    "ledStripGlobalDimmerRate": {
-        "message": "Dimmer rate"
+    "ledStripGlobalFadeRate": {
+        "message": "Fade rate"
     },
     "ledStripFlickerOverlay": {
         "message": "Flicker"
     },
-    "ledStripDimmerOverlay": {
-        "message": "Dimmed (in profile Status dimmed)"
+    "ledStripFadeOverlay": {
+        "message": "Fade to alt color (in profile Alt Status)"
     },
     "ledStripVtxOverlay": {
         "message": "VTX (uses vtx frequency to assign color)"
@@ -3281,8 +3281,8 @@
         "message": "D",
         "description": "Down direction in Color Mode in Led Strip"
     },
-    "ledStripModesOrientationTitle": {
-        "message": "LED Orientation ('Modes &amp; Orientation') and Color",
+    "ledStripModesColorTitle": {
+        "message": "LED Orientation, Color (left click) and Alt Color (right click)",
         "description": "One of the modes in Color Mode in Led Strip"
     },
     "ledStripModesSpecialColorsTitle": {
@@ -3336,6 +3336,10 @@
     "ledStripWiringMessage": {
         "message": "LEDs without wire ordering number will not be saved.",
         "description": "Message in the wiring modes in Led Strip"
+    },
+    "ledStripGlobalSettings": {
+        "message": "LED Strip Global Settings",
+        "description": "The Led Strip global settings, like profile etc"
     },
     "ledStripVtxFunction": {
         "message": "Larson scanner"

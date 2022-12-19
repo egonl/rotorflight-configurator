@@ -656,11 +656,11 @@ TABS.led_strip.initialize = function (callback) {
             mspHelper.sendLedStripSettings();
         });
 
-        $('#globalDimmerRate').val(FC.LED_STRIP_CONFIG.ledstrip_dimmer_rate);
-        $('#globalDimmerRate').change(function(e) {
-            FC.LED_STRIP_CONFIG.ledstrip_dimmer_rate = $('#globalDimmerRate').val();
+        $('#globalFadeRate').val(FC.LED_STRIP_CONFIG.ledstrip_fade_rate);
+        $('#globalFadeRate').change(function(e) {
+            FC.LED_STRIP_CONFIG.ledstrip_fade_rate = $('#globalFadeRate').val();
             mspHelper.sendLedStripSettings();
-            console.debug('Dimmer rate: ' + FC.LED_STRIP_CONFIG.ledstrip_dimmer_rate);
+            console.debug('Fade rate: ' + FC.LED_STRIP_CONFIG.ledstrip_fade_rate);
         });
 
         $('.mainGrid').disableSelection();

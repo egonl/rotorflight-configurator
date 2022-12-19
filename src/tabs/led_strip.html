@@ -34,37 +34,6 @@
             <button class="funcClear" i18n="ledStripClearSelectedButton"></button>
             <button class="funcClearAll" i18n="ledStripClearAllButton"></button>
 
-            <div class="select">
-                <span class="color_section" i18n="ledStripProfileTitle"></span>
-                <select id="ledStripProfile" class="profileSelect">
-                    <option value="0" i18n="ledStripProfileRaceOption"></option>
-                    <option value="1" i18n="ledStripProfileBeaconOption"></option>
-                    <option value="2" i18n="ledStripProfileStatusOption"></option>
-                    <option value="3" i18n="ledStripProfileStatusDimmedOption"></option>
-                </select>
-            </div>
-
-         <div class="number">
-                <label>
-                    <input type="number" id="globalBlinkRate" step="1" min="10" max="500" />
-                    <span i18n="ledStripGlobalBlinkRate"></span>
-                </label>
-            </div>
-
-            <div id="flickerRateDiv" class="number">
-                <label>
-                    <input type="number" id="globalFlickerRate" step="1" min="0" max="100" />
-                    <span i18n="ledStripGlobalFlickerRate"></span>
-                </label>
-            </div>
-
-            <div id="dimmerRateDiv" class="number">
-                <label>
-                    <input type="number" id="globalDimmerRate" step="1" min="0" max="100" />
-                    <span i18n="ledStripGlobalDimmerRate"></span>
-                </label>
-            </div>
-
             <div class="section" i18n="ledStripFunctionSection"></div>
 
 
@@ -167,9 +136,9 @@
                     <input type="checkbox" name="Vtx" class="toggle function-v" />
                     <label> <span i18n="ledStripVtxOverlay"></span></label>
                 </div>
-                <div class="checkbox dimmerOverlay">
-                    <input type="checkbox" name="Dimmer" class="toggle function-d" />
-                    <label> <span i18n="ledStripDimmerOverlay"></span></label>
+                <div class="checkbox fadeOverlay">
+                    <input type="checkbox" name="Fade" class="toggle function-d" />
+                    <label> <span i18n="ledStripFadeOverlay"></span></label>
                 </div>
                 <div class="checkbox flickerOverlay">
                     <input type="checkbox" name="Flicker" class="toggle function-k" />
@@ -197,7 +166,7 @@
                 <button class="mode_color-0-5 dir-d" i18n="ledStripDirD"></button>
             </div>
 
-            <div class="section" i18n="ledStripModesOrientationTitle"></div>
+            <div class="section" i18n="ledStripModesColorTitle"></div>
             <div class="directions">
                 <button class="dir-n" i18n="ledStripDirN"></button>
                 <button class="dir-e" i18n="ledStripDirE"></button>
@@ -265,6 +234,36 @@
                 <button class="funcWireClear w50" i18n="ledStripWiringClearAllControl"></button>
             </div>
             <p i18n="ledStripWiringMessage"></p>
+
+            <div class="section" i18n="ledStripGlobalSettings"></div>
+            <div class="select">
+                <span class="color_section" i18n="ledStripProfileTitle"></span>
+                <select id="ledStripProfile" class="profileSelect">
+                    <option value="0" i18n="ledStripProfileRaceOption"></option>
+                    <option value="1" i18n="ledStripProfileBeaconOption"></option>
+                    <option value="2" i18n="ledStripProfileStatusOption"></option>
+                    <option value="3" i18n="ledStripProfileAltStatusOption"></option>
+                </select>
+            </div>
+            <div class="number">
+                <label>
+                    <input type="number" id="globalBlinkRate" step="1" min="10" max="500" />
+                    <span i18n="ledStripGlobalBlinkRate"></span>
+                </label>
+            </div>
+            <div class="number">
+                <label>
+                    <input type="number" id="globalFadeRate" step="1" min="1" max="100" />
+                    <span i18n="ledStripGlobalFadeRate"></span>
+                </label>
+            </div>
+            <div class="number">
+                <label>
+                    <input type="number" id="globalFlickerRate" step="1" min="0" max="100" />
+                    <span i18n="ledStripGlobalFlickerRate"></span>
+                </label>
+            </div>
+
         </div>
 
         <div class="colorControls">

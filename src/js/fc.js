@@ -226,7 +226,7 @@ const FC = {
             ledstrip_beacon_percent:        0,
             ledstrip_beacon_period_ms:      0,
             ledstrip_blink_period_ms:       0,
-            ledstrip_dimmer_rate:           0,
+            ledstrip_fade_rate:             0,
             ledstrip_flicker_rate:          0,
             ledstrip_grb_rgb:               0,
             ledstrip_profile:               0,

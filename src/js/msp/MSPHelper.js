@@ -1147,7 +1147,7 @@ MspHelper.prototype.process_data = function(dataHandler) {
                 FC.LED_STRIP_CONFIG.ledstrip_beacon_percent = data.readU8();
                 FC.LED_STRIP_CONFIG.ledstrip_beacon_period_ms = data.readU16();
                 FC.LED_STRIP_CONFIG.ledstrip_blink_period_ms  = data.readU16();
-                FC.LED_STRIP_CONFIG.ledstrip_dimmer_rate = data.readU8();
+                FC.LED_STRIP_CONFIG.ledstrip_fade_rate = data.readU8();
                 FC.LED_STRIP_CONFIG.ledstrip_flicker_rate = data.readU8();
                 FC.LED_STRIP_CONFIG.ledstrip_grb_rgb = data.readU8();
                 FC.LED_STRIP_CONFIG.ledstrip_profile = data.readU8();
@@ -1836,7 +1836,7 @@ MspHelper.prototype.crunch = function(code) {
                 .push8(FC.LED_STRIP_CONFIG.ledstrip_beacon_percent)
                 .push16(FC.LED_STRIP_CONFIG.ledstrip_beacon_period_ms)
                 .push16(FC.LED_STRIP_CONFIG.ledstrip_blink_period_ms)
-                .push8(FC.LED_STRIP_CONFIG.ledstrip_dimmer_rate)
+                .push8(FC.LED_STRIP_CONFIG.ledstrip_fade_rate)
                 .push8(FC.LED_STRIP_CONFIG.ledstrip_flicker_rate)
                 .push8(FC.LED_STRIP_CONFIG.ledstrip_grb_rgb)
                 .push8(FC.LED_STRIP_CONFIG.ledstrip_profile)
