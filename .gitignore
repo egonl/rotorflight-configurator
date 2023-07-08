@@ -14,6 +14,7 @@ debug/
 release/
 testresults/
 .eslintcache
+cordova/bundle.keystore
 
 # OSX
 .DS_store
@@ -30,3 +31,5 @@ nbproject/
 # Eclipse
 .project
 .settings/
+test-results-junit/
+/src/package.json
